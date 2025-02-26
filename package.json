@@ -1,5 +1,5 @@
 {
-  "name": "wix",
+  "name": "drum-n-code-cypress",
   "version": "1.0.33",
   "description": "**Short description**",
   "main": "index.js",
@@ -20,12 +20,7 @@
     "syncLastReportsQmetryWithReportal": "npm run delete_reports; node scripts/joinQmetryCycleReportal.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepare": "husky install",
-    "feature:usage": "cucumber-js tests/test_case_cucumber --format usage --dry-run",
-    "feature:undefined": "cucumber-js tests/test_case_cucumber --format snippets --dry-run",
-    "test:run": "playwright test",
-    "test:open": "playwright test --ui",
-    "test:report": "playwright show-report"
+    "prepare": "husky install"
   },
   "keywords": [],
   "license": "ISC",
@@ -102,11 +97,6 @@
     "*.ts": [
       "npm run lint"
     ]
-  },
-  "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "./tests/function_for_cucumber/**/*.ts",
-    "filterSpecs": true,
-    "omitFiltered": true
   },
   "directories": {
     "test": "tests"

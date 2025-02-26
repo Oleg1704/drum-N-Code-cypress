@@ -9,6 +9,6 @@
       "outDir": "./dist"
     },
     "include": [
-      "tests/**/*.ts"
-    ]
+      "tests/tests-for-cypress/*.ts"
+,   ]
   }

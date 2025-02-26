@@ -36,4 +36,23 @@ export class Checker {
         cy.contains(selector, text, { timeout }).should(isVisible ? 'be.visible' : notbeVisibleState, { timeout });
       }
     
+      public checkElementHaveValue(selector: string, value: string, quantity: number = 0): void {
+        cy.get(selector).eq(quantity).should('have.value', value);
+      }
+    
+      public checkPlaceholderValue({
+        placeholder,
+        isVisible,
+        timeout = 30000,
+        notbeVisibleState = 'not.exist'
+      }: {
+        placeholder: string;
+        isVisible: boolean;
+        timeout?: number;
+        notbeVisibleState?: string;
+      }): void {
+        cy.get(`[placeholder="${placeholder}"]`)
+          .should(isVisible ? 'be.visible' : notbeVisibleState, { timeout });
+      }
+    
 }

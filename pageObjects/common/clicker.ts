@@ -22,4 +22,23 @@ export class Clicker extends Checker {
         cy.contains(selector, text, { timeout: timeout }).eq(quantity).click({ force: isForce });
     }
 
+    public clickOnElement({
+        selector,
+        quantity = 0,
+        isForce = false,
+        isLast = false
+      }: {
+        selector: string,
+        quantity?: number,
+        isForce?: boolean,
+        isLast?: boolean
+      }): void {
+        if (isLast) {
+          cy.get(selector).last().click({ force: isForce });
+          return;
+        }
+    
+        cy.get(selector).eq(quantity).click({ force: isForce });
+      }
+
 }
